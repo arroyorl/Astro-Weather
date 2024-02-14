@@ -32,13 +32,13 @@ on normal operation, the program presents 4 web pages on the device IP address:
 The program calculates the maximum wind speed during the period and average of wind speed and submits the data.
 
 
-## Sky temperature parameters
+### Sky temperature parameters
 - **Clear sky temp.**, defines the temperature of the limit of the sky temperature below what is considered clear sky (default -5ºC), above this temperature is considered cloudy, and above 0 ºC is considered overcast. Cloud index is calculated as a linear percentage of actual sky temp between 0ºC and "Clear sky temp".
 - **K1 to K7** parametes, see [apendixes 6 and 7 of CloudWatcher](https://lunaticoastro.com/aagcw/enhelp/)
 
 
-## Safe status parameters
-These /parameters section defines the thresholds for the safe / unsafe condition:
+### Safe status parameters
+The "/parameters" section defines the thresholds for the safe / unsafe condition:
 - **Humidity**	safe if humidity is below this value, unsafe otherwise.
 - **Wind**	safe if max wind speed (gust) is below this value, unsafe otherwise.
 - **Rain**	safe if the analogic value of rain sensor (rainA) is above this value, unsafe otherwise.
