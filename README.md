@@ -76,11 +76,11 @@ During WiFi conecction (setup STA), RED led bilnks slowly (500 ms), after the pr
 On normal operation, both leds are off.
 
 ## Bridge to ASCOM Boltwood Weather Monitor 
-The directory "ASCOM bridge" contains a .bat file which access the /boltwood web page of the sketch server and saves the response on a local file in the windows machine. This file may be used by the [ASCOM Boltwood Weather Monitor](https://github.com/ascomghostdrivers/legacydrivers/tree/main/ObservingConditionsDrivers) legacy driver<br>
+The directory [ASCOM bridge](ASCOM%20bridge) contains a .bat file which access the /boltwood web page of the sketch server and saves the response on a local file in the windows machine. This file may be used by the [ASCOM Boltwood Weather Monitor](https://github.com/ascomghostdrivers/legacydrivers/tree/main/ObservingConditionsDrivers) legacy driver<br>
 
 **Usage:** 
 ```
-boltwood.bat server_url [timeout  filename]<br>
-        default filename: %homedrive%%homepath%\downloads\boltwood.txt<br>
-        defailt time: 30 secs.<br>
+boltwood.bat server_url [timeout  filename]
+        default filename: %homedrive%%homepath%\downloads\boltwood.txt
+        defailt time: 30 secs.
 ```
