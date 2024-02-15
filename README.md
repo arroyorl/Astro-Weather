@@ -49,10 +49,12 @@ The "/parameters" section defines the thresholds for the safe / unsafe condition
 
 ## Conditional compilation:
 There are three defines, for including (or exclude if is commented), some sensors:
-- **\#define W_RAIN**	includes code for rain sensor with an YL-80 or FC-37 sensor
-- **\#define W_WIND**	includes code for wind sensor
-- **\#define W_BOLTWOOD**	includes code for data submission in Boltwood II format
-- **\#define W_MQTT**	includes code for data submission over MQTT
+```
+    #define W_RAIN      includes code for rain sensor with an YL-80 or FC-37 sensor
+    #define W_WIND      includes code for wind sensor
+    #define W_BOLTWOOD  includes code for data submission in Boltwood II format
+    #define W_MQTT      includes code for data submission over MQTT
+```
 Notice that the corresponding .hpp file is always included, but not used.
 
 > [!NOTE]
@@ -72,3 +74,13 @@ Initial setup (AP mode), RED led blinks quickly (200 ms).
 During WiFi conecction (setup STA), RED led bilnks slowly (500 ms), after the program is connected to WiFi, RED led is off and GREEN led is on during 3 secs.
 
 On normal operation, both leds are off.
+
+## Bridge to ASCOM Boltwood Weather Monitor 
+The directory "ASCOM bridge" contains a .bat file which access the /boltwood web page of the sketch server and saves the response on a local file in the windows machine. This file may be used by the [ASCOM Boltwood Weather Monitor](https://github.com/ascomghostdrivers/legacydrivers/tree/main/ObservingConditionsDrivers) legacy driver<br>
+
+**Usage:** 
+```
+boltwood.bat server_url [timeout  filename]<br>
+        default filename: %homedrive%%homepath%\downloads\boltwood.txt<br>
+        defailt time: 30 secs.<br>
+```
