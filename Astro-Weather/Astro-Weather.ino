@@ -13,6 +13,8 @@
 //  1.0 first version  (= AirQuality v6.8)
 //      code based on measure.ino from Dirk O. Kaar <dok@dok-net.net>
 //
+//  1.1 don't change spaces by &nbsp; in handlerBoltwood() if browser is 'curl'
+//
 ///////////////////////////////////////////////////////////////
  
 
@@ -409,6 +411,7 @@ void setup() {
   server.on("/data",handleRowData);
   server.on("/setupform", handleSetupForm);
   server.on("/parametersform", handleParametersForm);
+  server.collectHeaders("User-Agent","Content-Type");
 #ifdef  W_BOLTWOOD
   server.on("/boltwood", handleBoltwood);
 #endif
