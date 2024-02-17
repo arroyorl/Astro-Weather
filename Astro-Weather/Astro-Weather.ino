@@ -15,6 +15,9 @@
 //
 //  1.1 don't change spaces by &nbsp; in handlerBoltwood() if browser is 'curl'
 //
+//  1.2 replaced sqm-tsl2591 library by standard Adafruit_TSL2591 and calculate SQM in sketch
+//      sqm-tsl2591 library replaced because it enter in loop when sensor is saturated
+//
 ///////////////////////////////////////////////////////////////
  
 
@@ -30,7 +33,7 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>   // v 1.9.12
 
-#define FVERSION  "v1.0"
+#define FVERSION  "v1.2"
 #define PNAME "ESP8266 Astro Weather"
 
 ///////////////////////////////////////////////////
