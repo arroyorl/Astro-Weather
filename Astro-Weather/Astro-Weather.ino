@@ -18,6 +18,11 @@
 //  1.2 replaced sqm-tsl2591 library by standard Adafruit_TSL2591 and calculate SQM in sketch
 //      sqm-tsl2591 library replaced because it enter in loop when sensor is saturated
 //
+//  1.3 replaced formula for SQM mpsas calculation
+//          from http://www.unihedron.com/projects/darksky/magconv.php
+//      changed #ifdef W_SQM by W_GY906 in parameters (the section corresponds to GY906)       
+//
+//
 ///////////////////////////////////////////////////////////////
  
 
@@ -33,7 +38,7 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>   // v 1.9.12
 
-#define FVERSION  "v1.2"
+#define FVERSION  "v1.3"
 #define PNAME "ESP8266 Astro Weather"
 
 ///////////////////////////////////////////////////

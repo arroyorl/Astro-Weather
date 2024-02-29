@@ -42,7 +42,7 @@ const char PARAM_WIND_page[] PROGMEM = R"=====(
 <tr><td>Num Samples WindSpeed:</td><td><input type=text name="numsampleswind" value="@@NUMSAMPLESWIND@@"><small> 5 secs. each (=@@WINDINTERVAL@@ secs.)</small></td><td></td></tr>
 )=====";
 
-const char PARAM_SQM_page[] PROGMEM = R"=====(
+const char PARAM_GY906_page[] PROGMEM = R"=====(
 <table style="width:700px">
 <tr><td colspan=4 class=heading>Sky temperature parameters</td></tr>
 <tr><td>Clear sky temp.:</td>
@@ -104,7 +104,7 @@ void handleParameters() {
 #ifdef  W_WIND
   s += FPSTR(PARAM_WIND_page);
 #endif
-  s += FPSTR(PARAM_SQM_page);
+  s += FPSTR(PARAM_GY906_page);
 
   s += FPSTR(PARAM_SAFE_page);
   s += FPSTR(PARAM_LAST_page);
