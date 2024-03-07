@@ -71,9 +71,16 @@ const char PARAM_SAFE_page[] PROGMEM = R"=====(
 <tr><td>Wind: </td>
   <td>&lt;&nbsp;<input type=text size=10 name="windthreshold" value="@@WINDTHRESHOLD@@"> </td>
   <td><small>&nbsp;<label align="right" style="width:70px; display:inline-block; background:@@COLWIND@@"> @@MAXWINDSPEED@@ </label>&nbsp;km/h </small></td></tr>
+
 <tr><td>Rain threshold:</td>
-  <td>&gt;&nbsp;<input type=text size=10 name="rainthreshold" value="@@RAINTHRESHOLD@@"> </td>
+  <td>
+  	<select id="rainabove" name="rainabove">
+      <option value=">" @@SELABOVE@@>&gt;</option>
+      <option value="<" @@SELBELOW@@>&lt;</option>
+  	</select>
+    &nbsp;<input type=text size=6 name="rainthreshold" value="@@RAINTHRESHOLD@@"> </td>
   <td><small>&nbsp;<label align="right" style="width:70px; display:inline-block; background:@@COLRAIN@@"> @@RAINA@@ </label></small></td></tr>
+
 <tr><td>Cloud index:</td>
   <td>&lt;&nbsp;<input type=text size=10 name="cloudthreshold" value="@@CLOUDTHRESHOLD@@"> </td>
   <td><small>&nbsp;<label align="right" style="width:70px; display:inline-block; background:@@COLCLOUD@@"> @@CLOUDINDEX@@ </label>&nbsp;%</small></td></tr>
@@ -140,6 +147,14 @@ void handleParameters() {
   s.replace("@@HUMIDITYTHRESHOLD@@",String(settings.data.humiditythreshold,1));
   s.replace("@@WINDTHRESHOLD@@",String(settings.data.windthreshold,1));
   s.replace("@@RAINTHRESHOLD@@",String(settings.data.rainthreshold));
+  if (settings.data.rainabove) {
+    s.replace("@@SELABOVE@@", "selected");
+    s.replace("@@SELBELOW@@", "");
+  }
+  else {
+    s.replace("@@SELABOVE@@", "");
+    s.replace("@@SELBELOW@@", "selected");
+  }
   s.replace("@@CLOUDTHRESHOLD@@",String(settings.data.cloudthreshold));
   s.replace("@@SQMTHRESHOLD@@",String(settings.data.sqmthreshold));
   s.replace("@@LUXTHRESHOLD@@",String(settings.data.luxthreshold));
@@ -261,6 +276,14 @@ String aux;
   if (aux.length()) {
     settings.data.rainthreshold= constrain(aux.toInt(),0,1023);
   }
+  aux = server.arg("rainabove");
+  if (aux == ">") { 
+    settings.data.rainabove = true;
+  }
+  else {
+    settings.data.rainabove = false;
+  }
+
   aux = server.arg("cloudthreshold");
   if (aux.length()) {
     settings.data.cloudthreshold= aux.toFloat();

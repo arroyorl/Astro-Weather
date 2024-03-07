@@ -60,6 +60,7 @@ class Settings {
     float   humiditythreshold;                    // limit for humidity safe
 
     int     rainthreshold;                     // Threshold of rain sensor
+    bool    rainabove;                         // it is raining when A0 is above or below threshold?
 
     int     numsampleswind;                    // num samples (5 secs/each) to send wind data
     float   windthreshold;                     // threshold for win speed safe
@@ -103,6 +104,7 @@ class Settings {
       data.humiditythreshold=80.0;
 
       data.rainthreshold=600;
+      data.rainabove=false;   // false = if rainA is below threshold it is raining
 
       data.numsampleswind=12;
       data.windthreshold=30.0;

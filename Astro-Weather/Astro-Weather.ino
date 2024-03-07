@@ -22,6 +22,9 @@
 //          from http://www.unihedron.com/projects/darksky/magconv.php
 //      changed #ifdef W_SQM by W_GY906 in parameters (the section corresponds to GY906)       
 //
+//  1.4 defined rainabove in settings to control if rainD is true when A0 reading (rainA) is
+//        above or below threshold.
+//       this is needed for graphite rain sensors
 //
 ///////////////////////////////////////////////////////////////
  
@@ -38,7 +41,7 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>   // v 1.9.12
 
-#define FVERSION  "v1.3"
+#define FVERSION  "v1.4"
 #define PNAME "ESP8266 Astro Weather"
 
 ///////////////////////////////////////////////////
