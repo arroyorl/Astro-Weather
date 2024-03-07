@@ -84,3 +84,7 @@ boltwood.bat server_url [timeout  filename]
         default filename: %homedrive%%homepath%\downloads\boltwood.txt
         defailt time: 30 secs.
 ```
+
+## Build the resistive graphite rain detector
+In the folder "graphite rain detector" there is a PDF document describing how to build the graphite rain detector
+SLT files for 3D printing may be found in [https://www.thingiverse.com/thing:6521227](https://www.thingiverse.com/thing:6521227)
