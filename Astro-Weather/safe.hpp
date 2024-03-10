@@ -1,5 +1,9 @@
 /*************************************************
           safe / unsafe conditions check
+
+  v2.0 included code to take in account data.rainabove variable
+
+
 *************************************************/
 
 bool safePrev = false;
@@ -18,8 +22,14 @@ bool isSafe(){
     res = false;
 #endif
 #ifdef  W_RAIN
-  if (rainA < settings.data.rainthreshold)
-    res = false;
+  if (settings.data.rainabove) {
+    if (rainA > settings.data.rainthreshold)
+      res = false;
+  }
+  else {
+    if (rainA < settings.data.rainthreshold)
+      res = false;
+  }
 #endif
   if (cloudI > settings.data.cloudthreshold)
     res = false;
